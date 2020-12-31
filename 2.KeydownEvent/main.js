@@ -8,47 +8,45 @@ addEventListener('keydown', e => {
 
 
     // Function for move the ball
-    let move = () => {
-        ball.style.transform = `translate(${x*5}px, ${y*5}px)`;
-    }
+    let move = direction => {
+        // Get Direction
+        switch(direction){
+            case 'up':
+                y--;
+                break;
 
-    // Actions
-    const up = () => {
-        y--;
-        move();
-    }
+            case 'down':
+                y++;
+                break;
 
-    const down = () => {
-        y++;
-        move();
-    }
+            case 'left':
+                x--;
+                break;
 
-    const left = () => {
-        x--;
-        move();
-    }
+            case 'right':
+                x++;
+                break;
+        }
 
-    const right = () => {
-        x++;
-        move();
+        ball.style.transform = `translate(${x*10}px, ${y*10}px)`;
     }
 
     // Validation
     switch(e.key){
         case 'ArrowUp':
-            up();
+            move('up');
             break;
 
         case 'ArrowDown':
-            down();
+            move('down');
             break;
 
         case 'ArrowRight':
-            right();
+            move('right');
             break;
 
         case 'ArrowLeft':
-            left();
+            move('left');
             break;
     }
 })
