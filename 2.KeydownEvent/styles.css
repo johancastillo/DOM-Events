@@ -1,0 +1,15 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100vh;
+}
+
+.ball{
+    --size: 60px;
+    width: var(--size);
+    height: var(--size);
+    background: red;
+    border-radius: 50%;
+    margin: auto;
+}
